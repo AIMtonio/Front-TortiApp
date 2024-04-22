@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Empleado</title>
+    <link rel="stylesheet" href="../css/agregar.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="Producto.html">Productos</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+        <h2>Agregar nuevo empleado</h2>
+    </div>
+    <div class="container">   
+        <form id="agregar-empleado-form">
+            <div class="input-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="input-group">
+                <label for="apellidoE">Apellido Paterno:</label>
+                <input type="text" id="apellidoE" name="apellidoE" required>
+            </div>
+            <div class="input-group">
+                <label for="apellidoEM">Apellido Materno:</label>
+                <input type="text" id="apellidoEM" name="apellidoEM" required>
+            </div>
+            <div class="input-group">
+                <label for="numeroCel">Número celular:</label>
+                <input type="text" id="numeroCel" name="numeroCel" required>
+            </div>
+            <button type="submit">Agregar Empleado</button>
+        </form>
+
+    </div>
+    
+
+    <script src="../processJS/agregarEmpleado.js">
+        
+    </script>
+</body>
+</html>

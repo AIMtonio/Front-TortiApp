@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cliente</title>
+    <link rel="stylesheet" href="../css/agregar.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="Producto.html">Productos</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+    </nav>
+    <div class="container">
+        <h2>Agregar nuevo cliente</h2>
+    </div>
+
+    <div class="container">
+         <form id="agregar-cliente-form">
+            <div class="input-group">
+                <label for="nombreC">Nombre:</label>
+                <input type="text" id="nombreC" required>
+
+            </div>
+            <div class="input-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="input-group">
+                <label for="deuda">Deuda:</label>
+                <input type="text" id="deuda" name="deuda" required>
+
+            </div>
+            <div class="input-group">
+                <label for="idEmpleado">ID Empleado:</label>
+                <input type="text" id="idEmpleado" name="idEmpleado" required> 
+
+            </div>
+            <button type="submit">Agregar cliente</button>
+         </form>
+    </div>
+
+    <script src="../processJS/agregarCliente.js"></script>
+  
+</body>
+</html>

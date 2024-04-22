@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Cuenta</title>
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+
+</head>
+<body>
+
+    <div id="contenedor">
+        <div id="central">
+            <div id="login">
+                <div class="titulo">
+                    Nueva cuenta
+                </div>
+                <form id="loginform">
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="text" id="apellido" placeholder="Apellido" required>
+                    <input type="email" id="correo" placeholder="Correo electrónico" >
+                    <input type="text" id="numerocel" placeholder="Número de celular" required>
+                    <input type="password" id="contrasena" placeholder="Contraseña" required>
+                    <button type="submit">Crear Cuenta</button>
+                    <input type="button" onclick="history.back()" name="volver atrás" value="Regresar">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlaza tu archivo JavaScript aquí -->
+    <script src="../processJS/nuevaCuenta.js"></script>
+</body>
+</html>
