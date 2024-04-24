@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = JSON.stringify({ "usuario":usuario, "contraseña": contraseña });
 
         //Consumo para obtener el token
-     fetch('http://localhost:3000/api/auth', {
+     fetch('https://back-api-tortiapp.onrender.com/api/auth', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
        setTimeout(() => {
-        fetch('http://localhost:3000/api/login', {
+        fetch('https://back-api-tortiapp.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
