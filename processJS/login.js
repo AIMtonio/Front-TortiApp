@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('loginform');
+    let token = "";
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -12,22 +13,59 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        fetch('https://tortiapp.onrender.com/api/Usuario', {
+        let data = JSON.stringify({ "usuario":usuario, "contraseña": contraseña });
+
+        //Consumo para obtener el token
+     fetch('http://localhost:3000/api/auth', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic ' + btoa('usuario_auth' + ':' + 'P%ssword')
+        },
+        
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la respuesta');
+        }
+        return response.json();
+    })
+    .then(data => {
+        token = data.data;
+        return token;
+    })
+    .catch(error => {
+        alert('Error al generar autentificacion:', error);
+    });
+
+       setTimeout(() => {
+        fetch('http://localhost:3000/api/login', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
             },
-            body: JSON.stringify({ usuario, contraseña })
+            body: data
         })
         .then(response => {
             if (response.ok) {
+                Swal.fire({
+                    title: "Exito",
+                    text: "Inicio de sesión exitoso",
+                    icon: "success"
+                  });
                 window.location.href = '../html/Producto';
             } else {
-                alert('Usuario o contraseña incorrectos');
+                Swal.fire({
+                    title: "Error",
+                    text: "Usuario o contraseña incorrectos",
+                    icon: "error"
+                  });
             }
         })
         .catch(error => {
             alert('Error al iniciar sesión:', error);
         });
+       }, 1000);
     });
 });
